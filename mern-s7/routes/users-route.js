@@ -1,11 +1,12 @@
 const express = require('express');
-const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    console.log('GET Request in Places');
+const route = express()
+
+route.get('/', (req, res, next) => {
+    console.log("GET user request")
     res.json({
-        message: "It works!"
-    });
-});
+        message: 'new user'
+    })
+})
 
-module.exports = router
+module.exports = route
