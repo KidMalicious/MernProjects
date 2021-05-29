@@ -20,8 +20,8 @@ let DUMMY_PLACES = [
 
 const getPlaceById = (req, res, next) => {
     const placeId = req.params.pid
-    const places = DUMMY_PLACES.find(p => p.id === placeId)
-    if (!places || places.length === 0) {
+    const place = DUMMY_PLACES.find(p => p.id === placeId)
+    if (!place || place.length === 0) {
         throw new HttpError('Could not find a place for the provided id', 404)
     }
     res.json({

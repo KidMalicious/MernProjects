@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 
 const HttpError = require('./models/http-error')
 const placesRoutes = require('./routes/places-route')
-const usersRoutes = require('./routes/users-route')
+const usersRoutes = require('./routes/users-route');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -27,4 +28,10 @@ app.use((error, req, res, next) => {
     })
 })
 
-app.listen(5000);
+mongoose.connect(
+    'mongodb+srv://Aidan:Sonick11@cluster0.qqns7.mongodb.net/UdemyMern?retryWrites=true&w=majority'
+).then(() => {
+    app.listen(5000);
+}).catch(err => {
+    console.log(err)
+})
