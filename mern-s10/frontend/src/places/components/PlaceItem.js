@@ -34,7 +34,10 @@ const PlaceItem = props => {
       sendRequest(
         `http://localhost:5000/api/places/${props.id}`,
         'DELETE',
-
+        null,
+        {
+          'Authorization': 'Bearer ' + auth.token
+        }
       )
       props.onDelete(props.id)
     } catch (error) {}
@@ -52,7 +55,7 @@ const PlaceItem = props => {
         footer={<Button onClick={closeMapHandler}>CLOSE</Button>}
       >
         <div className="map-container">
-          <Map center={props.coordinates} zoom={16} />
+          <Map center={props.coordinates} zoom={14} />
         </div>
       </Modal>
       <Modal
