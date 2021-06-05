@@ -1,7 +1,9 @@
 {
     "env": {
-        "DB_USER": "academind",
+        "DB_USER": "Aidan",
         "DB_PASSWORD": "Sonick11",
-        
+        "DB_NAME": "UdemyMern",
+        "GOOGLE_API_KEY": "AIzaSyAtYSoWBngGmihyomzmu_c8hMbDg9aCIww",
+        "JWT_KEY": "supersecret_dont_share"
     }
 }
